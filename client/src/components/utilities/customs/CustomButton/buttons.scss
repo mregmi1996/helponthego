@@ -1,0 +1,50 @@
+@mixin btn  {
+    color: whitesmoke;
+    height: 30px;
+    margin-top: 0px;
+    width: 120px;
+    outline: none;
+    border: 1px solid #008000;
+    cursor: pointer;
+}
+
+
+.darkButton {
+    @include btn();
+    background-color: black;
+
+    &:hover {
+        transition: 1s ease;
+        border: none;
+    }
+}
+
+.lightButton {
+    @include btn();
+    background-color: green;
+}
+
+.outlineButton {
+    @include btn();
+    background-color: transparent;
+    border: 1px solid green;
+    color: green;
+
+    &:hover {
+        background-color: green;
+        color: #ffff;
+    }
+}
+
+.lightOpaqueButton {
+    @include btn();
+    background-color: rgba(0, 128, 0, 0.61);
+}
+
+.roundedButton {
+    border-radius: 12px;
+}
+
+.btnHover:hover {
+    background-color: green;
+}

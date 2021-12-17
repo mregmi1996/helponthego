@@ -1,0 +1,197 @@
+  @import 'themeVariablesUserProfile.scss';
+
+
+  // @mixin rule specifes mixins which allow us to define styles that can be re-used throughout the stylesheet
+  // It can take up arguements also to generate dynamic css rules
+  @mixin width-height($w, $h) {
+    width: $w;
+    height: $h;
+
+    @debug "width: #{$w}";    //@debug rule helps during developement as it allows us to see the value of a variable or expression while developing the stylesheet
+    @debug "height: #{$h}";
+  }
+
+  // Padding is the space given inside the element 
+  // Margin is the space given outside (around) the element
+
+  dl {
+    padding: 0.5em;
+  }
+
+  dt {
+    float: left;
+    clear: left;
+    width: 200px;
+    text-align: right;
+    color: green;
+  }
+
+  dd {
+    margin: 0 0 0 110px;
+    padding: 0 0 0.5em 0;
+  }
+
+  input, textarea {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  label {
+    font-family: $font-family-verdana;
+    font-size: 15px;
+  }
+
+  .profile {
+      text-align: center;
+      img {
+        max-width: 160px;
+        width: 100%;
+        margin: 0 auto;
+        transform: translate3d(0, -50%, 0)
+      }
+  }
+
+  .description {
+    margin: 1.071rem auto 0;
+    max-width: 600px;
+    color: #999;
+    text-align: center !important
+  }
+
+  .name {
+    margin-top: -80px,
+  }
+
+  .main {
+    background: $white;
+    position: relative
+  }
+
+  .mainRaised {
+    margin: -60px 30px 0px;
+    border-radius: 6px;
+    box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+    padding-bottom: 50px;
+  }
+
+  .title {
+    color: $pale-blue;
+    margin: 1.75rem 0 0.875rem;
+    text-decoration: none;
+    font-weight: 700;
+    font-family: 'Roboto Slab "Times New Roman" serif';
+    font-size: 35px;
+    display: inline-block;
+    position: relative;
+    margin-top: 30px;
+    min-height: 32px;
+    text-decoration: none
+  }
+
+  .navWrapper {
+    margin: 20px auto 50px auto;
+    text-align: center;
+  }
+
+  .container-profile {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .container-profile > div {
+    background-color: #f1f1f1;
+    width: 100%;
+    margin: 10px;
+    text-align: center;
+    line-height: 75px;
+    font-size: 30px;
+  }
+
+  .card-top {
+    margin-left: 270px;
+  }
+
+  .rating-container {
+    height: 20px;
+  }
+
+  .imageIcon {
+    @include width-height(80px, 80px);
+
+    border-radius: 50%;
+  }
+
+  .reviewDescription {
+      display: inline-block;
+  }
+
+  .reviewDescription span {
+    font-weight: bold;
+    font-size: 18px;
+  }
+
+  .profileImage {
+    @include width-height(200px, 150px);
+
+    border-radius: 50%;
+  }
+
+  .display {
+    display: block;
+  }
+
+  .hide {
+    display: none;
+  }
+
+  /* The Close Button */
+  .close {
+    color: $white;
+    float: left;
+    font-size: 15px;
+    font-weight: bold;
+    margin-right: 8px;
+  }
+
+  .m-bottom0 {
+    margin-bottom: 0px;
+  }
+
+  button[name="submit"] {
+    display: inline-block;
+    border-radius: 10px;
+    font-family: sans-serif;
+    font-weight: 500;
+    color: $white;
+    background-color: $bg-color-darkBlue;
+    text-align: center;
+    transition: all 0.2s;
+    box-shadow: 20px;
+    height: 50px;
+    width: 100%;
+  }
+
+  button[name="submit"]:hover {
+    background-color: $bg-color-navyBlue;
+  }
+
+  // Pseudo selectors
+
+  // pseudo class allows to apply styling to an element during it's particular state
+  // pseudo elements are CSS-generated non-DOM element that is rendered as if it was a DOM element in the browser
+  dt::after {
+    content: ":";
+  }
+
+  .close:hover, .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
